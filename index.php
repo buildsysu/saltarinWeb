@@ -3,7 +3,7 @@
 <html lang="en">
 
     <head>
-        <title>Registrar Usuario</title>
+        <title>Saltarin - Registro</title>
         <meta charset = "utf-8">
     </head>
     <body>
