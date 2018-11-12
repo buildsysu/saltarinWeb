@@ -1,0 +1,56 @@
+nav {
+    width: auto;
+    height: 50px;
+    background-color: #98C12A;
+    padding: 0;
+}
+
+nav .row {
+    margin: 0;
+}
+
+.logo {
+    height: 50px;
+    background-color: green;
+    background: rgba(0,128,0,1);
+    background: -moz-linear-gradient(left, rgba(0,128,0,1) 0%, rgba(152,193,42,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,128,0,1)), color-stop(100%, rgba(152,193,42,1)));
+    background: -webkit-linear-gradient(left, rgba(0,128,0,1) 0%, rgba(152,193,42,1) 100%);
+    background: -o-linear-gradient(left, rgba(0,128,0,1) 0%, rgba(152,193,42,1) 100%);
+    background: -ms-linear-gradient(left, rgba(0,128,0,1) 0%, rgba(152,193,42,1) 100%);
+    background: linear-gradient(to right, rgba(0,128,0,1) 0%, rgba(152,193,42,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008000', endColorstr='#98c12a', GradientType=1 );
+}
+
+.menu {
+    align: right;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    float: right;
+    background-color: #6C8F00;
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+    height: 50px;
+    width: 100px;
+    padding: 15px;
+    color: #03C2EB;
+}
+
+nav a:link {
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #256F83;
+    color: #03C2EB;
+}

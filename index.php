@@ -3,14 +3,14 @@
 <html lang="en">
 
     <head>
+        <?php include 'mod/includes.php'; ?>
         <title>Saltarin - Registro</title>
         <meta charset = "utf-8">
+        <script src="script/js/index.js"></script>
     </head>
     <body>
 
-        <header>
-            <h1>Registrate en nuestro fabuloso website:</h1>
-        </header>
+        <?php include 'mod/nav.php'; ?>
 
         <form action="registrar-usuario.php" method="post">
 
@@ -34,9 +34,6 @@
 
         <hr /><br />
 
-        <footer>
-            &copy;2016 <a href="http://www.VelozityWeb.com">www.VelozityWeb.com</a>
-        </footer>
 
     </body>
 </html>
