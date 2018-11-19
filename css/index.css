@@ -1,0 +1,15 @@
+.registerForm {
+    position: absolute;
+    top:50%;
+    left:50%;
+    width:800px;
+    margin-left:-400px;
+    height:auto;
+    margin-top:-200px;
+    border:3px solid green;
+    border-radius: 5px;
+    padding:5px;
+    text-align: center;
+    background-color: #98C12A;
+    z-index: -1;
+}

@@ -1,8 +1,16 @@
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
 nav {
     width: auto;
     height: 50px;
     background-color: #98C12A;
     padding: 0;
+    z-index: 4;
 }
 
 nav .row {

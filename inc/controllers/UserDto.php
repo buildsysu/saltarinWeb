@@ -1,5 +1,5 @@
 <?php
-include_once '/inc/config/functions.php';
+include_once 'inc/config/functions.php';
 /**
  * Esta clase contiene las funciones necesarias para gestionar la tabla table1 de la base de datos
  *
@@ -7,7 +7,7 @@ include_once '/inc/config/functions.php';
  * @author   Build Sys
  * @license  BUild Sys
  */
-class Table1{
+class UserDto{
 
     public $ID = 0;
     /**
@@ -18,14 +18,12 @@ class Table1{
      * @param type $fecha_final
      * @return type
      */
-    function create($campo1,$campo2,$campo3/*,...*/){
-
-
+ function create($username,$password,$name,$lastname,$email,$phone,$fk_idUserType){
 
         $connect = new Tools();
         $conexion = $connect->connectDB();
-        $sql = "insert into table1 (campo1,campo2,campo3)
-        values ('".$campo1."','".$campo2."','".$campo3."');";
+        $sql = "insert into User (username,password,name,lastname,email,phone,fk_idUserType)
+        values ('".$username."','".$password."','".$name."','".$lastname."','".$email."','".$phone."','".$fk_idUserType."');";
         $consulta = mysqli_query($conexion,$sql);
         if($consulta){
         }else{
@@ -42,15 +40,19 @@ class Table1{
      * @param type $fecha_final
      * @return type
      */
-    function update($campo1,$campo2,$campo3/*,...*/){
+    function update($idUser,$username,$password,$name,$lastname,$email,$phone,$fk_idUserType){
 
         $connect = new Tools();
         $conexion = $connect->connectDB();
         $sql = "UPDATE table1 SET "
-                . "campo1 = '$campo1', "
-                . "campo2 = '$campo1', "
-                . "campo3 = '$campo1'
-        WHERE ID = $this->ID ;";
+                . "username = '$username', "
+                . "password = '$password', "
+                . "name = '$name', "
+                . "lastname = '$lastname', "
+                . "email = '$email', "
+                . "phone = '$phone', "
+                . "fk_idUserType = '$fk_idUserType'
+        WHERE idUser = '.$idUser.' ;";
         $consulta = mysqli_query($conexion,$sql);
         if(!$consulta){
                echo "No se ha podido modificar la base de datos<br><br>".mysqli_error($conexion);
@@ -67,7 +69,7 @@ class Table1{
     function delete($ID){
         $connect = new Tools();
         $conexion = $connect->connectDB();
-        $sql = "DELETE FROM table1 WHERE ID=$ID;";
+        $sql = "DELETE FROM User WHERE idUser=$ID;";
         $consulta = mysqli_query($conexion,$sql);
         if($consulta){
         }else{
@@ -83,16 +85,16 @@ class Table1{
 
     function getData(){
         //Creamos la consulta
-        $sql = "SELECT * FROM table1 WHERE ID = $this->ID;";
+        $sql = "SELECT * FROM User WHERE idUser = $this->ID;";
         //obtenemos el array
         $tool = new Tools();
         $array = $tool->getArraySQL($sql);
         return $array;
     }
 
-    function getCampo1(){
+    function login($username){
         //Creamos la consulta
-        $sql = "SELECT campo1 FROM table1 WHERE ID = $this->ID;";
+        $sql = "SELECT password FROM User WHERE username = '.$username.';";
         //obtenemos el array
         $tool = new Tools();
         $array = $tool->getArraySQL($sql);

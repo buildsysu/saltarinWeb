@@ -6,9 +6,9 @@
  * @license  BUild Sys
  */
 define("SERVER","localhost");
-define("USER","user");
-define("PASS","pass");
-define("DB","db");
+define("USER","fernando");
+define("PASS","toorG0D$");
+define("DB","saltarinWeb");
 
 //OTROS DATOS
 define("DEBUG","true");

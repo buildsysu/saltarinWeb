@@ -10,7 +10,7 @@ if(DEBUG == "true"){
 }
 
 require_once("Tools.php");
-require_once("Table1Class.php");
+require_once("UserDto.php");
 require_once("Table2Class.php");
 
 ?>
