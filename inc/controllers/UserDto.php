@@ -97,17 +97,20 @@ class UserDto{
     function getExistingUser($username) {
         $connect = new Tools();
         $conexion = $connect->connectDB();
-        $consulta = $conexion->prepare('SELECT username FROM User WHERE username = :username LIMIT 1');
+        $consulta = $conexion->prepare('SELECT * FROM User WHERE username = :username LIMIT 1');
         $consulta->execute(array(':username' => $username));
         $result = $consulta->fetch();
         return $result;
     }
 
-    function login($username){
+    function login($username, $password){
         $connect = new Tools();
         $conexion = $connect->connectDB();
-        $consulta = $conexion->prepare('SELECT password FROM User WHERE username = :username LIMIT 1');
-        $consulta->execute(array(':username' => $username));
+        $consulta = $conexion->prepare('SELECT fk_idUserType FROM User WHERE username = :username AND password = :password LIMIT 1');
+        $consulta->execute(array(
+            ':username' => $username,
+            ':password' => $password
+        ));
         $result = $consulta->fetch();
         return $result;
     }

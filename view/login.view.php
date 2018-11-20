@@ -3,7 +3,9 @@
 <html lang="en">
 
 <head>
-    <?php include 'mod/outincludes.php'; ?>
+    <?php include 'mod/outincludes.php';
+        echo isset($_SESSION['username'])
+    ?>
     <title>Saltarin - Registro</title>
     <meta charset = "utf-8">
     <script src="script/js/login.js"></script>

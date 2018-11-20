@@ -6,7 +6,7 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><a class="fas fa-power-off soff" href="#"></a></li>
+                    <li><a class="fas fa-power-off soff" href="close.php"></a></li>
                     <li><a href="register.php">Regístrate</a></li>
                     <li><a href="http://saltarin.com.mx">Inicio</a></li>
                 </ul>

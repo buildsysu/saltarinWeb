@@ -1,13 +1,13 @@
 <?php
 require_once('Tools.php');
+require_once('../controllers/UserDto.php');
 
-$connect = new Tools();
-$conexion = $connect->connectDB();
+$dto = new UserDto();
 
-$result = $conexion->query('SELECT * FROM User');
+$username = 'gfernando';
 
-foreach ($result as $res) {
-    echo $res['name'];
-}
+$result = $dto->getExistingUser($username);
+
+var_dump($result);
 
 ?>
