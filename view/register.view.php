@@ -6,7 +6,6 @@
     <?php include 'mod/outincludes.php'; ?>
     <title>Saltarin - Registro</title>
     <meta charset = "utf-8">
-    <script src="script/js/register.js"></script>
     <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
@@ -86,12 +85,14 @@
                         </div>
                     </div>
                 </div>
-                <br>
                 <?php if(!empty($errores)): ?>
-                    <div class="alert alert-warning">
-                        <ul class="text-center">
-                            <?php echo $errores; ?>
-                        </ul>
+                    <br>
+                    <div class="col-md-12">
+                        <div class="alert alert-warning">
+                            <ul>
+                                <?php echo $errores; ?>
+                            </ul>
+                        </div>
                     </div>
                 <?php endif; ?>
                 </form>

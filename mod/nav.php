@@ -7,8 +7,8 @@
             <div class="menu">
                 <ul>
                     <li><a class="fas fa-power-off soff" href="close.php"></a></li>
-                    <li><a href="register.php">Regístrate</a></li>
-                    <li><a href="http://saltarin.com.mx">Inicio</a></li>
+                    <li><a href="user/profile.php">Perfil</a></li>
+                    <li><a href="index.php">Inicio</a></li>
                 </ul>
             </div>
         </div>

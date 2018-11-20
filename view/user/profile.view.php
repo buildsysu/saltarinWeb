@@ -3,14 +3,13 @@
 <html lang="en">
 
 <head>
-    <?php include 'mod/includes.php'; ?>
-    <title>Saltarin</title>
+    <?php include '../mod/inincludes.php'; ?>
+    <title>Saltarin - Registro</title>
     <meta charset = "utf-8">
-    <script src="script/index.js"></script>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-    <?php include 'mod/nav.php'; ?>
+    <?php include '../mod/innav.php'; ?>
     <br>
     <br>
     <div class="container">

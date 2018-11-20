@@ -4,11 +4,10 @@
 
 <head>
     <?php include 'mod/outincludes.php';
-        echo isset($_SESSION['username'])
+    echo isset($_SESSION['username'])
     ?>
-    <title>Saltarin - Registro</title>
+    <title>Saltarin - Iniciar Sesión</title>
     <meta charset = "utf-8">
-    <script src="script/js/login.js"></script>
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
@@ -39,17 +38,19 @@
                         </div>
                     </div>
                 </div>
-
                 <?php if(!empty($errores)): ?>
-                    <div class="alert alert-warning">
-                        <ul>
-                            <?php echo $errores; ?>
-                        </ul>
+                    <br>
+                    <div class="col-md-12">
+                        <div class="alert alert-warning">
+                            <ul>
+                                <?php echo $errores; ?>
+                            </ul>
+                        </div>
                     </div>
                 <?php endif; ?>
             </form>
             <h5 class="text-center">¿No tienes cuenta? <a href="register.php">Únete</a></h4>
+            </div>
         </div>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
