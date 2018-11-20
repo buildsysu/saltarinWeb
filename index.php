@@ -10,72 +10,20 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-
     <?php include 'mod/nav.php'; ?>
-    <div class="registerForm">
-        <div class="form-group">
-            <form id="registerForm" action="script/php/register.php" method="POST">
-
-                <h3>Crea una cuenta</h3>
-                <br />
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="col-md-10 col-md-offset-1">
-                            <!--Nombre Usuario-->
-                            <label for="username">Nombre de Usuario:</label><br>
-                            <input type="text" name="username" maxlength="45" class="form-control" required>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="col-md-10 col-md-offset-1">
-                            <!--Password-->
-                            <label for="password">Password:</label><br>
-                            <input type="password" name="password" maxlength="45" class="form-control" required>
-                        </div>
-                    </div>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="col-md-10 col-md-offset-1">
-                            <!--Password-->
-                            <label for="name">Nombre:</label><br>
-                            <input type="text" name="name" maxlength="45" class="form-control" required>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="col-md-10 col-md-offset-1">
-                            <!--Password-->
-                            <label for="lastname">Apellido:</label><br>
-                            <input type="text" name="lastname" maxlength="45" class="form-control" required>
-                        </div>
-                    </div>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="col-md-10 col-md-offset-1">
-                            <!--Password-->
-                            <label for="email">E-mail:</label><br>
-                            <input type="text" name="email" maxlength="45" class="form-control" required>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="col-md-10 col-md-offset-1">
-                            <!--Password-->
-                            <label for="phone">Teléfono:</label><br>
-                            <input type="text" name="phone" maxlength="45" class="form-control" required>
-                        </div>
-                    </div>
-                </div>
-                <br /><br/><br/>
-                <button type="submit" name="submit" class="btn btn-success" onclick="registerUser()"><span class="fa fa-user-plus"></span> Registrarme</button>
-                <button type="reset" name="clear" class="btn btn-warning"><span class="fas fa-backspace"></span> Borrar</button>
-
-            </form>
+    <br>
+    <br>
+    <div class="container">
+        <div class="col-md-12">
+            <div class="row">
+                <h1>Soy la página de inicio!</h1>
+                <article class="">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </article>
+            </div>
         </div>
     </div>
 </body>

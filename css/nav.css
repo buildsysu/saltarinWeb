@@ -3,6 +3,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
 nav {
@@ -34,6 +35,11 @@ nav .row {
     align: right;
 }
 
+.soff {
+    width: 50px;
+    padding:18px;
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -54,7 +60,7 @@ nav a {
     color: #03C2EB;
 }
 
-nav a:link {
+a:link {
     text-decoration: none;
 }
 

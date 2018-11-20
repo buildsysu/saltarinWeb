@@ -1,5 +1,5 @@
 <?php
-include_once 'functions.php';
+require_once('config.php');
 /**
  * Clase que contiene funciones útiles sobre la funcionalidad del programa
  *
@@ -13,14 +13,16 @@ class Tools{
      * @return type
      */
     function connectDB(){
-
-        $conexion = mysqli_connect(SERVER, USER, PASS, DB);
-        if($conexion){
-        }else{
-               echo 'Ha sucedido un error inexperado en la conexion de la base de datos<br>';
+        $conexion;
+        try {
+            $conexion = new PDO('mysql:host='.SERVER.';dbname='.DB.'',USER,PASS);
+            if($conexion){
+            }else{
+                   echo 'Ha sucedido un error inexperado en la conexion de la base de datos<br>';
+            }
+        } catch(PDOException $e) {
+            echo "Error: " . $e->getMessage();
         }
-        mysqli_query ($conexion,"SET NAMES 'utf8'");
-        mysqli_set_charset($conexion, "utf8");
         return $conexion;
     }
     /**

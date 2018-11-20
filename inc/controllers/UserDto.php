@@ -1,5 +1,4 @@
 <?php
-include_once 'inc/config/functions.php';
 /**
  * Esta clase contiene las funciones necesarias para gestionar la tabla table1 de la base de datos
  *
@@ -18,19 +17,23 @@ class UserDto{
      * @param type $fecha_final
      * @return type
      */
- function create($username,$password,$name,$lastname,$email,$phone,$fk_idUserType){
-
+    function create($username,$password,$name,$lastname,$email,$phone,$userType){
         $connect = new Tools();
         $conexion = $connect->connectDB();
-        $sql = "insert into User (username,password,name,lastname,email,phone,fk_idUserType)
-        values ('".$username."','".$password."','".$name."','".$lastname."','".$email."','".$phone."','".$fk_idUserType."');";
-        $consulta = mysqli_query($conexion,$sql);
-        if($consulta){
-        }else{
-               echo "No se ha podido insertar en la base de datos<br><br>".mysqli_error($conexion);
-        }
+        $consulta = $conexion->prepare('INSERT INTO User (username,password,name,lastname,email,phone,fk_idUserType)
+        VALUES (:username,:password,:name,:lastname,:email,:phone,:userType);');
+        $consulta->execute(array(
+            ':username' => $username,
+            ':password' => $password,
+            ':name' => $name,
+            ':lastname' => $lastname,
+            ':email' => $email,
+            ':phone' => $phone,
+            ':userType' => $userType
+        ));
+        $result = $consulta->fetch();
         $connect->disconnectDB($conexion);
-        return $consulta;
+        return $result;
     }
     /**
      * Modifica la tabla con los datos introducidos
@@ -41,7 +44,6 @@ class UserDto{
      * @return type
      */
     function update($idUser,$username,$password,$name,$lastname,$email,$phone,$fk_idUserType){
-
         $connect = new Tools();
         $conexion = $connect->connectDB();
         $sql = "UPDATE table1 SET "
@@ -92,13 +94,22 @@ class UserDto{
         return $array;
     }
 
+    function getExistingUser($username) {
+        $connect = new Tools();
+        $conexion = $connect->connectDB();
+        $consulta = $conexion->prepare('SELECT username FROM User WHERE username = :username LIMIT 1');
+        $consulta->execute(array(':username' => $username));
+        $result = $consulta->fetch();
+        return $result;
+    }
+
     function login($username){
-        //Creamos la consulta
-        $sql = "SELECT password FROM User WHERE username = '.$username.';";
-        //obtenemos el array
-        $tool = new Tools();
-        $array = $tool->getArraySQL($sql);
-        return $array[0][0];
+        $connect = new Tools();
+        $conexion = $connect->connectDB();
+        $consulta = $conexion->prepare('SELECT password FROM User WHERE username = :username LIMIT 1');
+        $consulta->execute(array(':username' => $username));
+        $result = $consulta->fetch();
+        return $result;
     }
 
     /**

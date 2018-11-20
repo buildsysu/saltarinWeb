@@ -5,8 +5,8 @@
  * @author   Build Sys
  * @license  BUild Sys
  */
-define("SERVER","localhost");
-define("USER","fernando");
+define("SERVER","localhost:3306");
+define("USER","root");
 define("PASS","toorG0D$");
 define("DB","saltarinWeb");
 

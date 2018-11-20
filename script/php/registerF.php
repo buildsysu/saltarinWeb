@@ -1,5 +1,5 @@
 <?php
-include_once 'inc/controllers/UserDto.php';
+include_once '/inc/controllers/UserDto.php';
 
  // $form_pass = $_POST['password'];
  //

@@ -1,7 +1,7 @@
 function registerUser() {
     $.ajax({
-        type: 'method', //aqui puede ser igual get
-        url: 'action',//aqui va tu direccion donde esta tu funcion php
+        type: 'POST', //aqui puede ser igual get
+        url: 'script/php/register.php',//aqui va tu direccion donde esta tu funcion php
         data: $("#registerForm").serialize(),
         success:function(result){
             //lo que devuelve tu archivo mifuncion.php
