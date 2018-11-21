@@ -59,6 +59,15 @@ class UserDto{
         return $result;
     }
 
+    function getExistingEmail($email) {
+        $connect = new Tools();
+        $conexion = $connect->connectDB();
+        $consulta = $conexion->prepare('SELECT email FROM User WHERE email = :email LIMIT 1');
+        $consulta->execute(array(':email' => $email));
+        $result = $consulta->fetch();
+        return $result;
+    }
+
     function login($username, $password){
         $connect = new Tools();
         $conexion = $connect->connectDB();

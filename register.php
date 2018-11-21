@@ -22,6 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if($check != false) {
             $errores .= "<li>Lo sentimos, el usuario ya existe.</li>";
         }
+
+        $check = $dto->getExistingEmail($email);
+
+        if($check != false) {
+            $errores .= "<li>Lo sentimos, el correo ya está registrado con otra cuenta.</li>";
+        }
     }
 
     if ($errores == '') {

@@ -1,4 +1,10 @@
-RewriteEngine On
+DirectoryIndex index.php
+
+DirectoryIndex index.html index.htm index.php index.php3 index.php4 index.php5 index.phtml index.html.var *.php
+
+AddType application/x-httpd-php .php .php3 .php4 .php5 .phtml
+AddType application/x-httpd-php-source .phps
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /index.php?/$1 [L]

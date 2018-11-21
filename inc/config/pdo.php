@@ -4,7 +4,7 @@ require_once('../controllers/UserDto.php');
 
 $dto = new UserDto();
 
-$username = 'gfernando';
+$username = 'root';
 
 $result = $dto->getExistingUser($username);
 
