@@ -1,13 +1,18 @@
-<?php
+<?php session_start();
 require_once('Tools.php');
 require_once('../controllers/UserDto.php');
+require_once('../controllers/ProfilePictureDto.php');
 
-$dto = new UserDto();
+$uDto = new UserDto();
+$ppDto = new ProfilePictureDto();
+$idUser = $uDto->getIdUser($_SESSION['username']);
+$user = $uDto->read($idUser);
+$purl = $ppDto->read($user['fk_idProfilePicture']);
 
-$username = 'root';
-
-$result = $dto->getExistingUser($username);
-
-var_dump($result);
+if ($purl != false) {
+    $profilePicture = '../img/user/' . $purl;
+} else {
+    $profilePicture = '../img/user/default.png';
+}
 
 ?>

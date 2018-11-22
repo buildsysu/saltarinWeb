@@ -50,6 +50,19 @@ class UserDto{
         return $result;
     }
 
+    function updateProfilePicture($idPp, $idU) {
+        $connect = new Tools();
+        $conexion = $connect->connectDB();
+        $consulta = $conexion->prepare('UPDATE User SET fk_idProfilePicture = :idPp WHERE idUser = :idU');
+        $consulta->execute(array(
+            ':idPp' => $idPp,
+            ':idU' => $idU
+        ));
+        $result = $consulta->fetch();
+        $connect->disconnectDB($conexion);
+        return $result;
+    }
+
     function getExistingUser($username) {
         $connect = new Tools();
         $conexion = $connect->connectDB();
@@ -66,6 +79,15 @@ class UserDto{
         $consulta->execute(array(':email' => $email));
         $result = $consulta->fetch();
         return $result;
+    }
+
+    function getIdUser($username) {
+        $connect = new Tools();
+        $conexion = $connect->connectDB();
+        $consulta = $conexion->prepare('SELECT idUser FROM User WHERE username = :username LIMIT 1');
+        $consulta->execute(array(':username' => $username));
+        $result = $consulta->fetch();
+        return 0+$result['idUser'];
     }
 
     function login($username, $password){

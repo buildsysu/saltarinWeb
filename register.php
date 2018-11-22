@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $userType = 4;
 
     $errores = '';
-        $dto = new UserDto();
+    $dto = new UserDto();
 
     if (empty($username) or empty($password)) {
         $errores .= '<li>Por favor rellena todos los campos</li>';
@@ -38,6 +38,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 }
 
-require 'view/register.view.php'
-
- ?>
+require 'view/register.view.php';
+?>

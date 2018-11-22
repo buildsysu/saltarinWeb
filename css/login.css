@@ -1,9 +1,9 @@
 .loginForm {
     position: absolute;
     top:50%;
-    left:50%;
+    left:55%;
     width:400px;
-    margin-left:150px;
+    margin-right: 100px;
     height:auto;
     margin-top:-100px;
     margin-bottom: 200px;
@@ -11,7 +11,7 @@
     border-radius: 5px;
     padding:5px;
     text-align: center;
-    background-color: #98C12A;
+    background-color: rgb(152, 193, 42, 0.7);
     z-index: -1;
     color: #256F83;
 }

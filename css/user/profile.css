@@ -1,0 +1,71 @@
+.container {
+    border:3px solid green;
+    border-radius: 5px;
+    background-color: #98C12A;
+    z-index: -1;
+    color: #256F83;
+    padding: 15px;
+}
+
+.profile-photo {
+    height: 150px;
+    width: 150px;
+    background-color: yellow;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.profile-photo img {
+    height: 150px;
+    width: 150px;
+    border: 2px solid #256F83;
+}
+
+#photo {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.photoButton {
+    z-index: 0;
+}
+
+label[for="photo"] {
+    font-size: 12px;
+    font-weight: 600;
+    color: #FFF;
+    background-color: #256F83;
+    display: inline-block;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 5px 10px !important;
+    margin-left: 17.75px;
+    text-transform: uppercase;
+    width: fit-content;
+    text-align: center;
+    z-index: 0;
+}
+
+.photoUpload{
+    width:20px;
+    height:20px;
+    background-color: #03950a;
+    margin-left: 163px;
+    margin-top: -15px;
+    padding-right: 18px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    font-size:12px;
+    float:left;
+    color: #FFF;
+    position: relative;
+    z-index: 4;
+}
+.photoUpload:hover{
+    background-color: #03800b;
+}

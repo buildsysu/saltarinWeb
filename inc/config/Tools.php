@@ -31,12 +31,7 @@ class Tools{
     * @return type
     */
     function disconnectDB($conexion){
-        $close = mysqli_close($conexion);
-        if($close){
-        }else{
-            echo 'Ha sucedido un error inexperado en la desconexion de la base de datos<br>';
-        }
-        return $close;
+        $conexion = null;
     }
 
 }
