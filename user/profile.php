@@ -13,7 +13,7 @@ $purl = $ppDto->read($user['fk_idProfilePicture']);
 if ($purl != false) {
     $profilePicture = '../img/user/' . $purl;
 } else {
-    $profilePicture = '../img/user/default.png';
+    $profilePicture = '../img/user/default.jpg';
 }
 
 $errores = '';
