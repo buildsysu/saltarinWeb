@@ -12,7 +12,6 @@
     width: 150px;
     background-color: yellow;
     margin-top: 30px;
-    margin-left: 30px;
 }
 
 .profile-photo img {
@@ -30,10 +29,6 @@
     z-index: -1;
 }
 
-.photoButton {
-    z-index: 0;
-}
-
 label[for="photo"] {
     font-size: 12px;
     font-weight: 600;
@@ -47,25 +42,28 @@ label[for="photo"] {
     text-transform: uppercase;
     width: fit-content;
     text-align: center;
-    z-index: 0;
 }
 
-.photoUpload{
-    width:20px;
-    height:20px;
-    background-color: #03950a;
-    margin-left: 163px;
-    margin-top: -15px;
-    padding-right: 18px;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
-    font-size:12px;
-    float:left;
-    color: #FFF;
-    position: relative;
-    z-index: 4;
+h1 {
+    margin-bottom: 0;
 }
-.photoUpload:hover{
-    background-color: #03800b;
+
+h3 {
+    margin-top: 0;
+}
+
+.btn-info {
+    font-size: 10px;
+    font-weight: 600;
+    color: #FFF;
+    background-color: #256F83;
+    border-color: #256F83;
+    display: inline-block;
+    float: right;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 5px 10px !important;
+    text-transform: uppercase;
+    width: fit-content;
+    text-align: center;
 }
