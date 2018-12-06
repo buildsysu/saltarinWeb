@@ -100,10 +100,16 @@ class HousesDto{
         if($rooms>0){
             $consulta=$consulta." AND rooms=$rooms";
         }      
-        if($rooms>0){
-            $consulta=$consulta." AND rooms=$rooms";
+        if($baths>0){
+            $consulta=$consulta." AND baths=$bath";
         }   
-        
+        if($nhost>0){
+            $consulta=$consulta." AND capacity=$nhost";
+        } 
+        if($from>0 && $from<$to){
+            $consulta=$consulta." AND offSeasonPrice BETWEEN $from AND $to";
+        } 
+        echo $consulta;
         return $consulta." LIMIT $ini,$fin";
     }
     function readLimitFiltro($ini,$fin,$rooms,$from,$to,$bath,$nhost){

@@ -6,12 +6,28 @@ if (isset($_SESSION['rooms'])){
     
 }
 else{$_SESSION['rooms'] = $_POST['rooms'];}
+
 if (isset($_SESSION['baths'])){
     
 }else{
     $_SESSION['baths'] = $_POST['baths'];
 }
 
+if (isset($_SESSION['nhost'])){
+    
+}else{
+    $_SESSION['nhost'] = $_POST['nhost'];
+}
+if (isset($_SESSION['from'])){
+    
+}else{
+    $_SESSION['from'] = $_POST['from'];
+}
+if (isset($_SESSION['to'])){
+    
+}else{
+    $_SESSION['to'] = $_POST['to'];
+}
 
 
 ?>
@@ -135,15 +151,15 @@ if (isset($_SESSION['baths'])){
                 <div class="filtros">
                     <form action="" method="post">
                     <h4>Precio</h4>De
-                    <input class="precio" type="number" min="0" name="from" placeholder="500" step="200" >
+                    <input class="precio" type="number" min="0" name="from" value="<?php echo $_SESSION['from'];?>"  step="200" >
                     
-                    <input class="precio" type="number" min="0" name="to" placeholder="1000" step="200">
+                    <input class="precio" type="number" min="0" name="to" value="<?php echo $_SESSION['to'];?>"  step="200">
                     <h4>Huespedes</h4>
-                    <input class="huespedes" type="number" min="1" name="host" placeholder="3">
+                    <input class="huespedes" type="number" min="1" name="nhost" value="<?php echo $_SESSION['nhost'];?>" >
                     <h4>baños</h4>
-                    <input class="baños" type="number" min="1" name="baths" value="<?php echo $_SESSION['baths'];?>" placeholder="2">
+                    <input class="baños" type="number" min="1" name="baths" value="<?php echo $_SESSION['baths'];?>" >
                     <h4>Recamaras</h4>
-                    <input class="recamaras" type="number" min="1" name="rooms" value="<?php echo $_SESSION['rooms'];?>"  placeholder="2">
+                    <input class="recamaras" type="number" min="1" name="rooms" value="<?php echo $_SESSION['rooms'];?>"  >
                     <br>
                     
                     <input type="submit"> 

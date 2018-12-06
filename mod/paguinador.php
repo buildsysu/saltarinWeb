@@ -10,6 +10,9 @@
     if (!isset($_GET['pagina'])){
         $_SESSION['rooms']=null;
         $_SESSION['baths']=null;
+        $_SESSION['nhost']=null;
+        $_SESSION['to']=null;
+        $_SESSION['from']=null;
         header('Location: index.php?pagina=1');
     }
     
@@ -39,7 +42,7 @@
     }*/
    // $registros=$casasConn->readLimit($inicio,$regpagina);
     $registros=$casasConn->readLimitFiltro($inicio,$regpagina,$rooms,$from,$to,$baths,$nhost);
-    $totalregistros=$casasConn->foundRowsFiltro($inicio,$regpagina,$rooms,$from,$to,$bath,$nhost);
+    $totalregistros=$casasConn->foundRowsFiltro($inicio,$regpagina,$rooms,$from,$to,$baths,$nhost);
     //$totalregistros=$pdo->query("SELECT FOUND_ROWS() AS total");
     
     $totalregistros=$totalregistros->fetch()['total'];
