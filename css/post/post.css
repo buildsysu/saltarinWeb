@@ -1,0 +1,41 @@
+.container {
+    border:3px solid green;
+    border-radius: 5px;
+    background-color: #98C12A;
+    z-index: -1;
+    color: #256F83;
+    padding: 15px;
+  }
+  
+  h3 {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .transparent {
+    opacity: 0.2;
+  }
+  tr.border_bottom td {
+    
+    border-bottom:1pt solid rgba(0, 0, 0, 0.11);
+  }
+  td{
+    padding-right: 10px;
+    padding-bottom: 10px;
+    width: 20%
+  }
+  td.Cpor{
+    width: 80%;
+    text-align: center;
+  }
+  div.carousel{
+    background-color: rgba(0, 0, 0, 0.438); 
+    border:3px solid green;
+  }
+
+  div.carousel img{
+    margin :0px auto ;
+    display: block;
+  }
+  
+  
+  

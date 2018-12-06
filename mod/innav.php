@@ -7,7 +7,7 @@
             <div class="menu">
                 <ul>
                     <li><a class="fas fa-power-off soff" href="../close.php"></a></li>
-                    <li><a href="../user/profile.php?user=<?php echo $_SESSION['username']?>">Perfil</a></li>
+                    <li><a href="../user/profile.php">Perfil</a></li>
                     <li><a href="../index.php">Inicio</a></li>
                 </ul>
             </div>

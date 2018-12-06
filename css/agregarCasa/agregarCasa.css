@@ -1,0 +1,16 @@
+.container {
+    border:3px solid green;
+    border-radius: 5px;
+    background-color: #98C12A;
+    z-index: -1;
+    color: #256F83;
+    padding: 15px;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: bold;
+}
+#postalCode{
+    size:30;
+}

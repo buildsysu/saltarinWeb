@@ -30,27 +30,20 @@ class UserDto{
         return $result;
     }
 
-    function updateInfo($idUser,$email,$phone) {
+    function update($idUser,$username,$password,$name,$lastname,$email,$phone,$fk_idUserType){
         $connect = new Tools();
         $conexion = $connect->connectDB();
-        $consulta = $conexion->prepare('UPDATE User SET email = :email , phone = :phone WHERE idUser = :id');
-        $consulta->execute(array(
-            ':email' => $email,
-            ':phone' => $phone,
-            ':id' => $idUser
-        ));
-        $result = $consulta->fetch();
-        $connect->disconnectDB($conexion);
-        return $result;
-    }
-
-    function updatePassword($idUser,$password) {
-        $connect = new Tools();
-        $conexion = $connect->connectDB();
-        $consulta = $conexion->prepare('UPDATE User SET password = :password WHERE idUser = :id');
+        $consulta = $conexion->prepare('UPDATE User SET username = :username, password = :password, name = :name,
+            lastname = :lastname, email = :email, phone = :phone, fk_idUserType = :userType WHERE idUser = :id');
         $consulta->execute(array(
             ':id' => $idUser,
-            ':password' => $password
+            ':username' => $username,
+            ':password' => $password,
+            ':name' => $name,
+            ':lastname' => $lastname,
+            ':email' => $email,
+            ':phone' => $phone,
+            ':userType' => $userType
         ));
         $result = $consulta->fetch();
         $connect->disconnectDB($conexion);
@@ -100,7 +93,7 @@ class UserDto{
     function login($username, $password){
         $connect = new Tools();
         $conexion = $connect->connectDB();
-        $consulta = $conexion->prepare('SELECT idUser, fk_idUserType FROM User WHERE username = :username AND password = :password LIMIT 1');
+        $consulta = $conexion->prepare('SELECT fk_idUserType FROM User WHERE username = :username AND password = :password LIMIT 1');
         $consulta->execute(array(
             ':username' => $username,
             ':password' => $password

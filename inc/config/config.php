@@ -5,12 +5,20 @@
  * @author   Build Sys
  * @license  BUild Sys
  */
-define("SERVER","localhost:3306"); // Conf P
-// define("SERVER","11.70.0.51"); // Conf S
-define("USER","root"); // Conf P
-// define("USER","reax8takn22f"); // Conf S
-define("PASS","toorG0D$"); // Conf P
-// define("PASS","mVNLAy6r@+#F"); // Conf S
+/*
+define("SERVER","107.180.14.67:3306");
+define("USER","moac123");
+define("PASS","-&C2T5seJ{8c"); // Conf P
+// define("PASS","root"); // Conf T
+define("DB","saltarinWeb");
+
+//OTROS DATOS
+define("DEBUG","true");
+*/
+define("SERVER","localhost");
+define("USER","root");
+define("PASS",""); // Conf P
+// define("PASS","root"); // Conf T
 define("DB","saltarinWeb");
 
 //OTROS DATOS
