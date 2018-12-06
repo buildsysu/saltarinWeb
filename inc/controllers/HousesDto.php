@@ -2,8 +2,6 @@
 
 class HousesDto{
 
-    $column = array('peakSeasonPrice','offSeasonPrice','rooms','baths');
-
     function create($peakSeasonPrice,$offSeasonPrice,$rooms,$baths,$description,$advancePercentage,$houseStatus,$user,$address,$services){
         $connect = new Tools();
         $conexion = $connect->connectDB();
@@ -50,41 +48,41 @@ class HousesDto{
         $conexion = $connect->connectDB();
         $consulta = $conexion->prepare('UPDATE User SET username = :username, password = :password, name = :name,
             lastname = :lastname, email = :email, phone = :phone, fk_idUserType = :userType WHERE idUser = :id');
-            $consulta->execute(array(
-                ':id' => $idUser,
-                ':username' => $peakSeasonPrice,
-                ':password' => $offSeasonPrice,
-                ':name' => $rooms,
-                ':lastname' => $baths,
-                ':email' => $description,
-                ':phone' => $advancePercentage,
-                ':userType' => $houseStatus
-            ));
-            $result = $consulta->fetch();
-            $connect->disconnectDB($conexion);
-            return $result;
-        }
-
-        function getExistingUser($peakSeasonPrice) {
-            $connect = new Tools();
-            $conexion = $connect->connectDB();
-            $consulta = $conexion->prepare('SELECT username FROM User WHERE username = :username LIMIT 1');
-            $consulta->execute(array(':username' => $peakSeasonPrice));
-            $result = $consulta->fetch();
-            return $result;
-        }
-
-        function login($peakSeasonPrice, $offSeasonPrice){
-            $connect = new Tools();
-            $conexion = $connect->connectDB();
-            $consulta = $conexion->prepare('SELECT fk_idUserType FROM User WHERE username = :username AND password = :password LIMIT 1');
-            $consulta->execute(array(
-                ':username' => $peakSeasonPrice,
-                ':password' => $offSeasonPrice
-            ));
-            $result = $consulta->fetch();
-            return $result;
-        }
+        $consulta->execute(array(
+            ':id' => $idUser,
+            ':username' => $peakSeasonPrice,
+            ':password' => $offSeasonPrice,
+            ':name' => $rooms,
+            ':lastname' => $baths,
+            ':email' => $description,
+            ':phone' => $advancePercentage,
+            ':userType' => $houseStatus
+        ));
+        $result = $consulta->fetch();
+        $connect->disconnectDB($conexion);
+        return $result;
     }
 
-    ?>
+    function getExistingUser($peakSeasonPrice) {
+        $connect = new Tools();
+        $conexion = $connect->connectDB();
+        $consulta = $conexion->prepare('SELECT username FROM User WHERE username = :username LIMIT 1');
+        $consulta->execute(array(':username' => $peakSeasonPrice));
+        $result = $consulta->fetch();
+        return $result;
+    }
+
+    function login($peakSeasonPrice, $offSeasonPrice){
+        $connect = new Tools();
+        $conexion = $connect->connectDB();
+        $consulta = $conexion->prepare('SELECT fk_idUserType FROM User WHERE username = :username AND password = :password LIMIT 1');
+        $consulta->execute(array(
+            ':username' => $peakSeasonPrice,
+            ':password' => $offSeasonPrice
+        ));
+        $result = $consulta->fetch();
+        return $result;
+    }
+
+}
+?>

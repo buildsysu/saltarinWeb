@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = sha1($_POST['password']);
 
     $errores = '';
-        $dto = new UserDto();
+    $dto = new UserDto();
 
     if (empty($username) or empty($password)) {
         $errores .= '<li>Por favor rellena todos los campos</li>';

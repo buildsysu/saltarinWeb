@@ -15,7 +15,7 @@
     <br>
     <div class="col-md-6 col-md-offset-3 container">
         <div class="row">
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
                 <div class="col-md-4">
                     <div class="col-md-10 col-md-offset-1">
                         <div class="profile-photo">
@@ -44,7 +44,7 @@
                             <div class="input-group">
                                 <!--Password-->
                                 <span class="input-group-addon"><i class="fas fa-at"></i></span>
-                                <input type="text" name="email" maxlength="45" placeholder="E-mail" class="form-control"
+                                <input type="text" id="email" name="email" maxlength="45" placeholder="E-mail" class="form-control"
                                 value="<?php echo $user['email']; ?>" required
                                 <?php if(!$edition): ?>
                                     disabled
@@ -74,7 +74,7 @@
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fas fa-lock"></i></span>
-                                    <input type="password" name="lastpass" maxlength="45" placeholder="Contraseña actual" class="form-control">
+                                    <input type="password" name="lastpass" maxlength="45" placeholder="Contraseña actual" class="form-control" value="">
                                 </div>
                             </div>
                         </div>
@@ -107,6 +107,18 @@
                 </div>
             </form>
         </div>
+    </div>
+    <div class="col-md-6 col-md-offset-3 container" style="margin-top: 20px;">
+        <h4><i class="fas fa-home"></i> Casas registradas</h4>
+        <ul>
+            <li>No hay casas registradas.</li>
+        </ul>
+    </div>
+    <div class="col-md-6 col-md-offset-3 container" style="margin-top: 20px; margin-bottom: 40px;">
+        <h4><i class="fas fa-warehouse"></i> Casas rentadas</h4>
+        <ul>
+            <li>No hay casas rentadas.</li>
+        </ul>
     </div>
 </body>
 </html>

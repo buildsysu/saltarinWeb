@@ -1,4 +1,5 @@
 <?php session_start();
+header("Cache-Control: no-cache, no-store, must-revalidate");
 
 require_once '../inc/config/Tools.php';
 require_once '../inc/controllers/UserDto.php';
@@ -20,9 +21,14 @@ if ($purl != false) {
     $profilePicture = '../img/user/default.jpg';
 }
 
-$errores = '';
+if(!empty($_SESSION['error'])) {
+    $errores = $_SESSION['error'];
+    $_SESSION['error'] = null;
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $idUser = $uDto->getIdUser($_SESSION['username']);
+    $errores = '';
 
     if(!empty($_FILES)) {
         $check = @getimagesize($_FILES['photo']['tmp_name']);
@@ -33,21 +39,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $idPp = $ppDto->create($rand);
             $uDto->updateProfilePicture($idPp,$idUser);
-        } else {
-            $errores .= "No es un formato de imagen válido.";
+            unset($_FILES);
         }
     }
 
-    $lastpass = sha1($_POST['lastpass']);
-    $password = sha1($_POST['password']);
-    if(!empty($lastpass) && !empty($password)) {
-        if($user['password'] == $lastpass) {
-            $uDto->updatePassword($idUser,$password);
+    if(!empty($_POST['lastpass'])) {
+        $lastpass = sha1($_POST['lastpass']);
+        if (!empty($_POST['password'])) {
+            $user = $uDto->read($idUser);
+            $password = sha1($_POST['password']);
+            if($user['password'] == $lastpass) {
+                $uDto->updatePassword($idUser,$password);
+            } else {
+                $errores .= "La contraseña actual no coincide.<br>";
+            }
         } else {
-            $errores .= "La contraseña actual no coincide.";
+            $errores .= "Por favor rellene todos los campos.<br>";
         }
-    } else {
-        $errores .= "Por favor rellene todos los campos.";
     }
 
     $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
@@ -55,13 +63,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(!empty($email) && !empty($phone)) {
         $uDto->updateInfo($idUser,$email,$phone);
     } else {
-        $errores .= "Por favor rellene todos los campos.";
+        $errores .= "Por favor rellene todos los campos.<br>";
     }
 
-    if ($errores == '') {
-        header('Location: profile.php?user='.$_SESSION['username']);
-        // echo "Llegue al final";
+    if ($errores != '') {
+        $_SESSION['error'] = $errores;
     }
+
+    unset($_POST['lastpass']);
+    header('Location: profile.php?user='.$_SESSION['username']);
 
 }
 

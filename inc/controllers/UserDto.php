@@ -33,11 +33,11 @@ class UserDto{
     function updateInfo($idUser,$email,$phone) {
         $connect = new Tools();
         $conexion = $connect->connectDB();
-        $consulta = $conexion->prepare('UPDATE User SET email = :email, phone = :phone WHERE idUser = :id');
+        $consulta = $conexion->prepare('UPDATE User SET email = :email , phone = :phone WHERE idUser = :id');
         $consulta->execute(array(
-            ':id' => $idUser,
             ':email' => $email,
             ':phone' => $phone,
+            ':id' => $idUser
         ));
         $result = $consulta->fetch();
         $connect->disconnectDB($conexion);
